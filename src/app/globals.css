@@ -1,26 +1,89 @@
 @import "tailwindcss";
+@tailwind base;
+/* @import "tailwindcss/preflight"; */
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+*,
+* ::before,
+*::after {
+  /* padding: 0; kalau pake 0 p-4 gak jadi */
+  /* padding: auto; */
+  /* margin: 0; */
+  box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+img {
+  transition: .3s ease all;
+  -webkit-transition: .3s ease all;
+  -moz-transition: .3s ease all;
+  -ms-transition: .3s ease all;
+  -o-transition: .3s ease all;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+img:hover {
+  scale: 102%;
+}
+
+/* .loading {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, #ffc639 95%, #0000) 50% 1px/24px 24px no-repeat,
+    radial-gradient(farthest-side, #0000 calc(100% - 28px), #e4e4ed 0);
+  animation: s9 1s infinite linear;
+} */
+
+/* color
+  #222831
+  #ffc639
+  #e4e4ed
+  #eeeeee
+*/
+
+/* costum loading */
+.spinner {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner::before,
+.spinner::after {
+  border: 6.7px solid #ffc639;
+  border-radius: 50%;
+  position: absolute;
+  content: '';
+  display: block;
+}
+
+.spinner::before {
+  width: 33.6px;
+  height: 33.6px;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  animation: spinner-1o3y8q 0.75s infinite linear reverse;
+}
+
+.spinner::after {
+  animation: spinner-1o3y8q 0.5s infinite linear;
+  height: 56px;
+  width: 56px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+
+@keyframes spinner-1o3y8q {
+  to {
+    transform: rotate(360deg);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes s9 {
+  to {
+    transform: rotate(1turn);
+  }
 }
