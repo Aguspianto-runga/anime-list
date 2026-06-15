@@ -1,4 +1,5 @@
 import { getAnimeResponse } from "@/libs/api-libs";
+import Header from "@/components/AnimeList/Header";
 
 const Page = async () => {
   const topAnime = await getAnimeResponse("top/anime", "limit=10");
