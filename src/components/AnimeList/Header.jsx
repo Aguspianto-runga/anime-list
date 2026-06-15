@@ -7,13 +7,10 @@ const Header = ({ title, linkHref, linkTitle }) => (
   <div className="flex items-center justify-between p-4">
     {/* Judul halaman dengan ukuran 2xl dan warna abu-abu muda */}
     <h1 className="text-2xl font-bold text-[#eeeeee]">{title}</h1>
-    
+
     {/* Render link hanya jika kedua props linkHref & linkTitle tersedia */}
     {linkHref && linkTitle && (
-      <Link
-        href={linkHref}
-        className="text-sm underline transition md:text-xl hover:text-[#ffc639] text-[#eeeeee]"
-      >
+      <Link href={linkHref} className="text-sm underline transition md:text-xl hover:text-[#ffc639] text-[#eeeeee]">
         {linkTitle}
       </Link>
     )}

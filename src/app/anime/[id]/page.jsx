@@ -15,7 +15,7 @@ const Page = async ({ params: { id } }) => {
       <div className="flex gap-2 px-4 pt-4 text-[#e4e4ed] overflow-auto">
         <div className="flex flex-col items-center justify-center border rounded w-36 border-[#eeeeee] p-2">
           <div>Peringkat</div>
-          <p>{anime.data.rank.toLocaleString('id-ID')}</p>
+          <p>{anime.data.rank.toLocaleString("id-ID")}</p>
         </div>
         <div className="flex flex-col items-center justify-center border rounded w-36 border-[#eeeeee] p-2">
           <div>Skor</div>
@@ -23,7 +23,7 @@ const Page = async ({ params: { id } }) => {
         </div>
         <div className="flex flex-col items-center justify-center border rounded w-36 border-[#eeeeee] p-2">
           <div>Anggota</div>
-          <p>{anime.data.members.toLocaleString('id-ID')}</p>
+          <p>{anime.data.members.toLocaleString("id-ID")}</p>
         </div>
         <div className="flex flex-col items-center justify-center border rounded w-36 border-[#eeeeee] p-2">
           <div>Episode</div>
